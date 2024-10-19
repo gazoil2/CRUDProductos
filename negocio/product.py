@@ -1,9 +1,12 @@
 
 class Product:
-    def __init__(self, idProd, nomCli, desc, precio) -> None:
+    def __init__(self, idProd, nomCli, desc, precio, estado) -> None:
         self.__idProducto = idProd
         self.__nombreCliente = nomCli
         self.__descripcion = desc
+        self.__estado = estado
+        if precio == None:
+            precio = 0
         self.__precio = precio
 
     @property
@@ -22,6 +25,6 @@ class Product:
     def precio(self):
         return self.__precio
     
-    @precio.setter
-    def precio(self, value):
-        self.__precio = value
+    @property
+    def estado(self):
+        return self.__estado

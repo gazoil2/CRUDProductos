@@ -1,29 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product List</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  <!-- Optional Bootstrap for styling -->
+    <title>Selección de Cliente</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap para estilos -->
+    <style>
+        body {
+            background-color: #f8f9fa; /* Fondo claro para contraste */
+        }
+        .card {
+            background-color: #ffffff; /* Fondo blanco para el formulario */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+        }
+        h1 {
+            font-family: 'Arial', sans-serif; /* Fuente moderna */
+            font-weight: 600; /* Peso de fuente en negrita */
+            color: #343a40; /* Color de texto más oscuro */
+        }
+        .form-label {
+            font-weight: 500; /* Peso de fuente medio para las etiquetas */
+        }
+        .form-select {
+            border: 1px solid #ced4da; /* Borde personalizado */
+            border-radius: 5px; /* Bordes redondeados para el select */
+            height: calc(3.25rem + 2px); /* Altura del select */
+            background-color: #f8f9fa; /* Fondo claro para el select */
+            transition: border-color 0.3s; /* Transición suave para el borde */
+            width: 100%; /* Asegura que el select sea de ancho completo */
+        }
+        .form-select:focus {
+            border-color: #28a745; /* Color de borde al enfocar */
+            box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Sombra al enfocar */
+        }
+        .btn-success {
+            background-color: #28a745; /* Color verde del botón */
+            border: none; /* Sin borde */
+            transition: background-color 0.3s; /* Transición suave del fondo */
+            padding: 15px; /* Mayor relleno para hacer el botón más grande */
+            width: 100%; /* Asegura que el botón sea de ancho completo */
+        }
+        .btn-success:hover {
+            background-color: #218838; /* Verde más oscuro al pasar el ratón */
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Client Select</h1>
-        <form action="/productos" method='POST' class="form-group mx-auto" style="max-width: 500px;">
-            <div class="mb-3">
-                <label for="cliente" class="form-label">Selecciona un cliente:</label>
-                <select name="cliente" id="cliente" class="form-select">
-                    {% for cliente in clientes %}
-                        <option value="{{ cliente.razSoc }}">
-                            {{ cliente.idCli }} -
-                            {{ cliente.razSoc }}
-                        </option>
-                    {% endfor %}
-                </select>
+        <div class="row justify-content-center">
+            <div class="col-md-6"> <!-- Card takes half the width -->
+                <div class="card p-4">
+                    <h1 class="text-center">Selección de Cliente</h1>
+                    <form action="/productos" method='POST' class="form-group">
+                        <div class="mb-4">
+                            <label for="cliente" class="form-label">Selecciona un cliente:</label>
+                            <select name="cliente" id="cliente" class="form-select">
+                                <option value="" disabled selected>-- Seleccione un cliente --</option> <!-- Opción por defecto -->
+                                {% for cliente in clientes %}
+                                    <option value="{{ cliente.razSoc }}">
+                                        {{ cliente.idCli }} - {{ cliente.razSoc }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">Iniciar sesión</button> <!-- Botón de ancho completo -->
+                    </form>
+                </div>
             </div>
-    
-            <button type="submit" class="btn btn-success">Iniciar sesion</button>
-        </form>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

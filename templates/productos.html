@@ -9,35 +9,43 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Product List</h1>
+        {% if message %}
+            <div class="alert alert-primary mt-3">{{ message }}</div>
+        {% endif %}
         <form method="POST" action="/confirmar_compra">  <!-- Form with POST method -->
             <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Client Name</th>
                         <th>Description</th>
+                        <th>Precio Unitario</th>
                         <th>Quantity</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for product in products %}
                     <tr>
-                        <td >{{ product[1].idProducto }}</td>
-                        <td >{{ product[1].nomCli }}</td>
-                        <td >{{ product[1].prodDesc }}</td>
+                        <td >{{ product.idProducto }}</td>
+                        <td >{{ product.prodDesc }}</td>
+                        <td>{{  product.precio}}</td>
                         <td>
-                            <input type="number" 
-                            name="quantity_{{ product[1].idProducto }}_{{ product[1].nomCli }}_{{product[1].prodDesc}}" 
+                            {% if product.estado == 1%}
+                                <input type="number" 
+                                name="quantity_{{ product.idProducto }}_{{ product.nomCli }}_{{product.prodDesc}}_{{product.precio}}" 
                                    class="form-control" 
                                    value="0" 
                                    min="0">
+                            {%else%}
+                                <p>Producto no disponible</p>
+                            {% endif %}
                         </td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
+            
             <div class="text-center">
-                <button type="confirmar_compra" class="btn btn-primary">Submit</button>  <!-- Submit button -->
+                <button type="confirmar_compra" class="btn btn-primary">Confirmar compra</button>  <!-- Submit button -->
             </div>
         </form>
     </div>
