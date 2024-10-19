@@ -18,11 +18,22 @@ class ProductDAO:
             products.append(Product(id_producto, raz_soc, descripcion))  # Adjust according to your Product constructor
         return products
 
+    def has_stock_of_a_product(self, producto : Product, quantity : int):
+        self.__cursor.execute("""
+            CALL box_beni_piza_joaquin_v2.Check_Stock_Producto_2(%s, %s);
+        """, (producto.idProducto, quantity))
 
-    def delete_product(self, product: Product):
-        self.__cursor.execute("DELETE FROM products WHERE id = %s", (product.id,))  # Ensure 'id' exists in Product
-        self.__db.commit()
+        return True if (result := self.__cursor.fetchone()) and result[1] == 'S' else False
 
-    def close(self):
-        self.__cursor.close()
-        self.__db.close()
+    def add_price_to_object(self, producto: Product):
+        self.__cursor.execute("""
+            SELECT PUnitario 
+            FROM box_beni_piza_joaquin_v2.producto p 
+            JOIN box_beni_piza_joaquin_v2.cliente c ON p.cliente_id = c.id
+            WHERE p.idProducto = %s
+        """, (producto.idProducto,))
+
+        result = self.__cursor.fetchone()  # Fetch the first result
+        if result:
+            precio = result[0]  # Get the price from the result
+            producto.precio = precio

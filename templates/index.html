@@ -8,25 +8,22 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Product List</h1>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Client Name</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for product in products %}
-                <tr>
-                    <td>{{ product.id }}</td>
-                    <td>{{ product.raz_soc }}</td>
-                    <td>{{ product.descripcion }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <h1 class="text-center">Client Select</h1>
+        <form action="/productos" method='POST' class="form-group mx-auto" style="max-width: 500px;">
+            <div class="mb-3">
+                <label for="cliente" class="form-label">Selecciona un cliente:</label>
+                <select name="cliente" id="cliente" class="form-select">
+                    {% for cliente in clientes %}
+                        <option value="{{ cliente.razSoc }}">
+                            {{ cliente.idCli }} -
+                            {{ cliente.razSoc }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+    
+            <button type="submit" class="btn btn-success">Iniciar sesion</button>
+        </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
