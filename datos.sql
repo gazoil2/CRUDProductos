@@ -1,10 +1,10 @@
-CREATE DATABASE  IF NOT EXISTS `box_beni_piza_joaquin_v2` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE  IF NOT EXISTS `box_beni_piza_joaquin_v2` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `box_beni_piza_joaquin_v2`;
--- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
 --
 -- Host: localhost    Database: box_beni_piza_joaquin_v2
 -- ------------------------------------------------------
--- Server version	8.0.28
+-- Server version	8.0.38
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -537,7 +537,7 @@ DROP TABLE IF EXISTS `formapago`;
 CREATE TABLE `formapago` (
   `IDPago` int NOT NULL AUTO_INCREMENT,
   `TipoPago` varchar(5) NOT NULL,
-  `Desc` varchar(32) NOT NULL,
+  `Descripcion` varchar(32) NOT NULL,
   PRIMARY KEY (`IDPago`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -765,14 +765,14 @@ CREATE TABLE `ordenfabricaciondet` (
   `IDEstado` int NOT NULL,
   `Qty` decimal(12,2) NOT NULL,
   PRIMARY KEY (`IDOrdenFabricacionDET`),
-  KEY `ODVentasDet_idx` (`IDVentasDET`),
   KEY `IDProducto_idx` (`IDProducto`),
   KEY `Estado_idx` (`IDEstado`),
   KEY `IDFabricacionCAB_idx` (`IDOrdenFabricacionCAB`),
+  KEY `OFDET_IDVentaDET_idx` (`IDVentasDET`),
   CONSTRAINT `ODFDET_Estados` FOREIGN KEY (`IDEstado`) REFERENCES `estados` (`IDEstados`),
   CONSTRAINT `ODFDET_IDProducto` FOREIGN KEY (`IDProducto`) REFERENCES `producto` (`IDProducto`),
-  CONSTRAINT `ODFDET_IDVentasDet` FOREIGN KEY (`IDVentasDET`) REFERENCES `ordenventadet` (`idOrdenVentaDET`),
-  CONSTRAINT `OFDET_IDFabricacionCAB` FOREIGN KEY (`IDOrdenFabricacionCAB`) REFERENCES `ordenfabricacioncab` (`IDOrdenFabricacionCAB`)
+  CONSTRAINT `OFDET_IDFabricacionCAB` FOREIGN KEY (`IDOrdenFabricacionCAB`) REFERENCES `ordenfabricacioncab` (`IDOrdenFabricacionCAB`),
+  CONSTRAINT `OFDET_IDVentaDET` FOREIGN KEY (`IDVentasDET`) REFERENCES `ordenventadet` (`idOrdenVentaDET`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -859,7 +859,7 @@ CREATE TABLE `ordenventacab` (
   `IDOrdenVentaCAB` int NOT NULL,
   `IDCliente` int NOT NULL,
   `IDEstado` int NOT NULL,
-  `FechaBaja` date NOT NULL,
+  `FechaBaja` date DEFAULT NULL,
   `IDFormaPago` int NOT NULL,
   `TipoEntrega` varchar(45) NOT NULL,
   `FechaAlta` date NOT NULL,
@@ -880,7 +880,7 @@ CREATE TABLE `ordenventacab` (
 
 LOCK TABLES `ordenventacab` WRITE;
 /*!40000 ALTER TABLE `ordenventacab` DISABLE KEYS */;
-INSERT INTO `ordenventacab` VALUES (1,1,2,'2007-05-15',1,'Parcial','2036-10-17',23112.12),(2,2,2,'2007-06-07',1,'Parcial','2010-10-08',123123.12);
+INSERT INTO `ordenventacab` VALUES (1,1,2,'2007-05-15',1,'Parcial','2036-10-17',23112.12),(2,2,2,'2007-06-07',1,'Parcial','2010-10-08',123123.12),(3,1,1,NULL,1,'Parcial','2024-10-19',139228.89),(4,1,1,NULL,1,'parcial','2024-10-19',1.00),(5,1,1,NULL,1,'Retira cliente','2024-10-19',137283.18),(6,1,1,NULL,1,'Retira cliente','2024-10-19',139228.89),(7,1,1,NULL,1,'Envio','2024-10-19',139228.89),(8,1,1,NULL,1,'Envio','2024-10-19',139228.89),(9,1,1,NULL,1,'Envio','2024-10-19',139228.89),(10,1,1,NULL,1,'Envio','2024-10-19',137283.18),(11,1,1,NULL,1,'Envio','2024-10-19',139228.89),(12,1,1,NULL,1,'Retira cliente','2024-10-19',151655.98);
 /*!40000 ALTER TABLE `ordenventacab` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -892,7 +892,7 @@ DROP TABLE IF EXISTS `ordenventadet`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ordenventadet` (
-  `idOrdenVentaDET` int NOT NULL,
+  `idOrdenVentaDET` int NOT NULL AUTO_INCREMENT,
   `IDOrdenVentaCAB` int NOT NULL,
   `IDProducto` varchar(45) NOT NULL,
   `Cantidad` int NOT NULL,
@@ -903,7 +903,7 @@ CREATE TABLE `ordenventadet` (
   KEY `FKID_Producto` (`IDProducto`),
   CONSTRAINT `FKID_OrdenVentaCAB` FOREIGN KEY (`IDOrdenVentaCAB`) REFERENCES `ordenventacab` (`IDOrdenVentaCAB`),
   CONSTRAINT `FKID_Producto` FOREIGN KEY (`IDProducto`) REFERENCES `producto` (`IDProducto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -912,7 +912,7 @@ CREATE TABLE `ordenventadet` (
 
 LOCK TABLES `ordenventadet` WRITE;
 /*!40000 ALTER TABLE `ordenventadet` DISABLE KEYS */;
-INSERT INTO `ordenventadet` VALUES (1,1,'BLUED4X10',15,139228.89,208843335.00),(2,1,'MVCBO1',4,155627.81,62251124.00),(3,2,'BLUED4X10',10,139228.89,139228890.00);
+INSERT INTO `ordenventadet` VALUES (1,1,'BLUED4X10',15,139228.89,208843335.00),(2,1,'MVCBO1',4,155627.81,62251124.00),(3,2,'BLUED4X10',10,139228.89,139228890.00),(4,6,'BLUED4X10',1,139228.89,139228.89),(5,7,'BLUED4X10',1,139228.89,139228.89),(6,8,'BLUED4X10',1,139228.89,139228.89),(7,9,'BLUED4X10',1,139228.89,139228.89),(8,10,'FHOTRODDX3',1,137283.18,137283.18),(9,11,'BLUED4X10',1,139228.89,139228.89),(10,12,'PERF1000',1,151655.98,151655.98);
 /*!40000 ALTER TABLE `ordenventadet` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1032,43 +1032,9 @@ CREATE TABLE `producto` (
 
 LOCK TABLES `producto` WRITE;
 /*!40000 ALTER TABLE `producto` DISABLE KEYS */;
-INSERT INTO `producto` VALUES ('BLUED4X10',1,'Blues Deville 4x10 Reissue',1,100890.50,38.00,139228.89,1,'2008-10-10'),('BOGECS-100',5,'Bogner Ecstasy 100-watt Tube Head',2,NULL,29.80,NULL,1,'2011-10-10'),('CT1X12WIDE23',3,'California Tweed1X12 CALIFORNIA TWEED 23',3,NULL,35.00,NULL,1,'2010-02-14'),('FHOTRODDX3',1,'Hot Rod Deluxe III',1,NULL,37.00,NULL,1,'2018-12-08'),('MJCM900',2,'JCM900 4100',2,NULL,41.00,NULL,1,'2008-03-17'),('MVCAB1+',3,'MARK V+ - Head',2,NULL,35.00,NULL,1,'2012-04-03'),('MVCBO1',3,'MARK V - Combo 1x12',1,119713.70,30.00,155627.81,1,'2012-04-03'),('MVS8080',2,'Marshall Valvestate 8080',1,NULL,35.50,NULL,1,'2008-01-10'),('PERF1000',1,'Performer 1000 - Black',1,NULL,40.00,NULL,1,'2009-08-14'),('RIV_VENUS 5x12H',6,'Rivera Venus 5 1x12\" 35-watt Tube Combo Amp',2,NULL,43.60,NULL,1,'2015-09-15'),('SLO-100 SO',4,'Soldano SLO-100 Super Lead Overdrive',2,NULL,37.00,NULL,1,'2010-12-18');
+INSERT INTO `producto` VALUES ('BLUED4X10',1,'Blues Deville 4x10 Reissue',1,100890.50,38.00,139228.89,1,'2008-10-10'),('BOGECS-100',5,'Bogner Ecstasy 100-watt Tube Head',2,NULL,29.80,NULL,4,'2011-10-10'),('CT1X12WIDE23',3,'California Tweed1X12 CALIFORNIA TWEED 23',3,110516.70,35.00,149197.55,1,'2010-02-14'),('FHOTRODDX3',1,'Hot Rod Deluxe III',1,100206.70,37.00,137283.18,1,'2018-12-08'),('MJCM900',2,'JCM900 4100',2,NULL,41.00,NULL,4,'2008-03-17'),('MVCAB1+',3,'MARK V+ - Head',2,79545.70,35.00,107386.70,1,'2012-04-03'),('MVCBO1',3,'MARK V - Combo 1x12',1,119713.70,30.00,155627.81,1,'2012-04-03'),('MVS8080',2,'Marshall Valvestate 8080',1,NULL,35.50,NULL,4,'2008-01-10'),('PERF1000',1,'Performer 1000 - Black',1,108325.70,40.00,151655.98,1,'2009-08-14'),('RIV_VENUS 5x12H',6,'Rivera Venus 5 1x12\" 35-watt Tube Combo Amp',2,NULL,43.60,NULL,4,'2015-09-15'),('SLO-100 SO',4,'Soldano SLO-100 Super Lead Overdrive',2,NULL,37.00,NULL,4,'2010-12-18');
 /*!40000 ALTER TABLE `producto` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `producto_AFTER_INSERT` AFTER INSERT ON `producto` FOR EACH ROW BEGIN
-	call InsertarRegistro(3, "Creacion producto: " + idproducto, "Producto",1);
-END */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `producto_BEFORE_UPDATE` BEFORE UPDATE ON `producto` FOR EACH ROW BEGIN
-	call InsertarRegistro(3, "Modificacion de precio: " + old.Costo + " a " + new.Costo + " del Articulo " + new.IDProducto, "Producto",1);
-END */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Temporary view structure for view `productos_detalles`
@@ -1292,6 +1258,34 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `StockMin`,
  1 AS `Diferencia`*/;
 SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `reserva_materiales`
+--
+
+DROP TABLE IF EXISTS `reserva_materiales`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `reserva_materiales` (
+  `idreserva_materiales` int NOT NULL AUTO_INCREMENT,
+  `IDArticulo` varchar(45) NOT NULL,
+  `Cantidad` int NOT NULL,
+  `Detalle` varchar(45) NOT NULL,
+  PRIMARY KEY (`idreserva_materiales`),
+  KEY `fk_reserva_articulo_idx` (`IDArticulo`),
+  CONSTRAINT `fk_reserva_articulo` FOREIGN KEY (`IDArticulo`) REFERENCES `articulo` (`IDArticulo`)
+) ENGINE=InnoDB AUTO_INCREMENT=219 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `reserva_materiales`
+--
+
+LOCK TABLES `reserva_materiales` WRITE;
+/*!40000 ALTER TABLE `reserva_materiales` DISABLE KEYS */;
+INSERT INTO `reserva_materiales` VALUES (188,'TP10028-25',1,'Venta cab: 12'),(189,'BP10038-25',1,'Venta cab: 12'),(190,'LPD3840-25',1,'Venta cab: 12'),(191,'LPI3840-25',1,'Venta cab: 12'),(192,'FP9520-25',1,'Venta cab: 12'),(193,'FTEP9520-25',1,'Venta cab: 12'),(194,'TOPFREP20-25x25',2,'Venta cab: 12'),(195,'TOPFONP20-25x25',2,'Venta cab: 12'),(196,'REGAFDERSTD-BKN',4,'Venta cab: 12'),(197,'MANITFDER-BK',1,'Venta cab: 12'),(198,'TARM1020',8,'Venta cab: 12'),(199,'PARK205N',4,'Venta cab: 12'),(200,'PARK2505N',4,'Venta cab: 12'),(201,'FREZ206P',2,'Venta cab: 12'),(202,'FREZ1506P',4,'Venta cab: 12'),(203,'CUEFDER-BK',5,'Venta cab: 12'),(204,'VINIL',820,'Venta cab: 12'),(205,'FREZ1506N',8,'Venta cab: 12'),(206,'FDERLOGO3',1,'Venta cab: 12');
+/*!40000 ALTER TABLE `reserva_materiales` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `rubros`
@@ -1579,11 +1573,24 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Check_Stock_Producto`(PIDProducto Varchar(45), PCantidad INT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Check_Stock_Producto`(PIDProducto VARCHAR(45), PCantidad INT)
 BEGIN
-	Select p.IDProducto,r.IDArticulo,r.cantidad * PCantidad as "Qty Necesaria",a.Stock,(a.Stock-r.cantidad * PCantidad) as "Diff" from producto p join recetaMateriales r on p.idProducto = r.IdProducto join articulo a on r.iDArticulo = a.IDArticulo   where p.idProducto = PIDProducto;
+    SELECT 
+        p.IDProducto,
+        r.IDArticulo,
+        r.cantidad * PCantidad AS Qty_Necesaria,
+        a.Stock - COALESCE((SELECT SUM(m.cantidad) FROM reserva_materiales m WHERE m.idarticulo = r.idarticulo), 0)  AS Stock_Disponible,
+        (a.Stock - (r.cantidad * PCantidad)) - COALESCE((SELECT SUM(m.cantidad)  FROM reserva_materiales m WHERE m.idarticulo = r.idarticulo), 0) AS Diff 
+    FROM 
+        producto p 
+    JOIN 
+        recetaMateriales r ON p.idProducto = r.IdProducto 
+    JOIN 
+        articulo a ON r.iDArticulo = a.IDArticulo   
+    WHERE 
+        p.idProducto = PIDProducto;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -1598,7 +1605,7 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Check_Stock_Producto_2`(P_IDProducto varchar(45), P_Cantidad int)
 BEGIN
@@ -1606,7 +1613,7 @@ BEGIN
     	Select p.IDProducto
     from producto p join recetaMateriales r on p.idProducto = r.IdProducto 
     join articulo a on r.iDArticulo = a.IDArticulo   
-    where p.idProducto = P_IDProducto and a.Stock-r.cantidad * P_Cantidad < 0) then
+    where p.idProducto = P_IDProducto and (a.Stock - (r.cantidad * P_Cantidad)) - COALESCE((SELECT SUM(m.cantidad) FROM reserva_materiales m WHERE m.idarticulo = r.idarticulo), 0) < 0) then
 		select P_IDProducto, "N" as Procesable;
 	else 
 		select P_IDProducto, "S"  as Procesable;
@@ -1768,6 +1775,57 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `InsertarVentaCAB` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertarVentaCAB`(in pid_tipo_pago int, tipo_entrega varchar(45), pimporte decimal(12,2), razon_cli varchar(45))
+BEGIN
+	declare vidcliente int;
+    declare vidventacab int;
+    select idcliente into vidcliente from cliente where razon_cli = razsoc;
+    select count(*) + 1 into vidventacab from ordenventacab;
+    
+    insert into ordenventacab(idordenventacab, idcliente, idestado, idformapago, fechaalta, importetotal, tipoentrega) values (vidventacab,vidcliente,1,pid_tipo_pago,curdate(),pimporte, tipo_entrega);
+    select vidventacab;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `InsertarVentaDET` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertarVentaDET`(pidventacab int ,pidproducto varchar(45),pcantidad int, ppunitario decimal(12,2))
+BEGIN
+	DECLARE v_detalle VARCHAR(45);
+    SET v_detalle = CONCAT('Venta cab: ', pidventacab);
+    INSERT INTO reserva_materiales (IDArticulo, Cantidad, Detalle)
+    SELECT r.IDArticulo, r.cantidad * pcantidad, v_detalle
+    FROM recetaMateriales r
+    WHERE r.IDProducto = pidproducto;
+	insert into ordenventadet(idordenventacab,idproducto ,cantidad ,punitario  ,importe) values 
+							  (pidventacab   ,pidproducto,pcantidad, ppunitario, ppunitario * cantidad);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `ObtenerEstadoCuentaCorriente` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -1851,6 +1909,33 @@ BEGIN
     -- Eliminar las tablas temporales después de su uso
    
 
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `prueba_temp` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `prueba_temp`()
+BEGIN
+	CREATE TEMPORARY TABLE temp_articulo (
+    IDArticulo VARCHAR(45) PRIMARY KEY,
+    Stock DECIMAL(12, 2)
+	);
+	INSERT INTO temp_articulo (IDArticulo, Stock)
+            SELECT a.IDArticulo, a.Stock - COALESCE((select sum(cantidad) from reserva_materiales where IDArticulo = a.idarticulo),0) FROM box_beni_piza_joaquin_v2.articulo a;
+	
+    select * from temp_articulo;
+    DROP TEMPORARY TABLE IF EXISTS temp_articulo;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -2046,4 +2131,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-18 19:30:06
+-- Dump completed on 2024-10-19 21:35:14

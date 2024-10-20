@@ -1,6 +1,5 @@
 
 import mysql.connector
-import aiomysql
 from negocio.product import Product
 
 class ProductDAO:
@@ -59,17 +58,14 @@ class ProductDAO:
             );
         """)
 
-        # Step 2: Populate the temporary table with current stock from articulo
         cnx.execute(""" 
             INSERT INTO temp_articulo (IDArticulo, Stock)
-            SELECT IDArticulo, Stock FROM box_beni_piza_joaquin_v2.articulo;
+            SELECT a.IDArticulo, a.Stock - COALESCE((select sum(cantidad) from reserva_materiales where IDArticulo = a.idarticulo),0) FROM box_beni_piza_joaquin_v2.articulo a;
         """)
 
-        # Step 3: Update the temp_articulo table based on the required quantities from recetaMateriales
+
         for product, quantity in products_with_quantities:
             product_id = product.idProducto
-            
-            # Update the stock in the temporary table
             cnx.execute("""
                 UPDATE temp_articulo a
                 SET a.Stock = a.Stock - (
@@ -84,18 +80,15 @@ class ProductDAO:
                 );
             """, (quantity, product_id, product_id))
 
-        # Step 4: Check if any articles are out of stock
         cnx.execute("""
             SELECT IDArticulo, Stock
             FROM temp_articulo
             WHERE Stock < 0;
         """)
 
-        # Step 5: Determine if all products can be fulfilled
         stock_status = cnx.fetchall()
-        all_in_stock = len(stock_status) == 0  # If there's no record in stock_status, all products can be fulfilled
+        all_in_stock = len(stock_status) == 0 
 
-        # Clean up temporary table
         cnx.execute("DROP TEMPORARY TABLE IF EXISTS temp_articulo;")
         
         cnx.close()

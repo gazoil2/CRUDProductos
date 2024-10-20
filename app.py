@@ -4,14 +4,13 @@ from negocio.product import Product
 from persistencia.productdao import ProductDAO
 from persistencia.clientedao import ClienteDao
 from persistencia.tipopagodao import TipoPagoDAO, TipoPago
+from persistencia.ventacabdao import VentaCABDAO, VentaCAB
 from negocio.productmanager import ProductManager  # Adjust the import based on your structure
-from negocio.ventacab import VentaCAB
-
 app = Flask(__name__)
 
 db_config = {
     'user': 'root',
-    'password': 'i2i0L2aH1',
+    'password': '',
     'host': 'localhost',  # or the IP address of your database server
     'port': '3306',
     'database': 'box_beni_piza_joaquin_v2',  # the name of your database
@@ -20,8 +19,8 @@ db_config = {
 products_dao = ProductDAO(db_config)  
 cliente_dao = ClienteDao(db_config)
 tipo_dao = TipoPagoDAO(db_config)
+ventacab_dao = VentaCABDAO(db_config)
 product_manager = ProductManager(products_dao,cliente_dao,tipo_dao)
-app.secret_key = 'sigma_benicio_cagon_joaquin_puto_me_dejas_haciendo_la_base_de_datos_solo'
 
 
 @app.route('/')
@@ -67,7 +66,7 @@ def comprar():
             productos = product_manager.list_products_for_a_client(cliente)
             message = f"Seleccione algun producto"
             return render_template('productos.html', products = productos, message = message)
-        product_manager.set_productos_a_comprar(productos)
+        product_manager.set_productos_a_comprar(products)
         return render_template('confirmar_compra.html', products=products, precio_total = precio_total, payment_types=payment_types)
 
 
@@ -75,11 +74,15 @@ def comprar():
 def mostrar_venta_cab():
     productos = product_manager.get_productos_a_comprar()
     #PRODUCTOS ES UNA TUPLA DE (PRODUCTO : CANTIDAD)
-    tipo_pago = TipoPago(request.form.get("paymentType")) 
+    tipo_pago = int(request.form.get("paymentType")) 
     tipo_envio = request.form.get("shippingType")
+    product_manager.print_a(tipo_envio)
     importe_total = sum(producto[0].precio * producto[1] for producto in productos)
-    fecha_hoy = datetime.now().date().isoformat() # ya esta en formato sql se supone YYYY-DD-MM
-    VentaCAB(tipo_pago,tipo_envio,importe_total,fecha_hoy,productos[0].nomCli)
-    return render_template('compra_success.html')
+    idventacab = ventacab_dao.insertar_venta_cab(VentaCAB(tipo_pago,tipo_envio,importe_total,productos[0][0].nomCli))
+    ventacab_dao.insertar_venta_detalle(idventacab, productos)
+    return render_template('compra_success.html', 
+                           order_id=idventacab, 
+                           products=productos, 
+                           precio_total=importe_total)
 if __name__ == '__main__':
     app.run(debug=True)

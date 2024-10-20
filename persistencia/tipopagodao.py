@@ -8,11 +8,11 @@ class TipoPagoDAO:
 
     def get_tipos(self):
         self.__cursor.execute("""
-            SELECT descripcion FROM box_beni_piza_joaquin_v2.formapago;
+            SELECT descripcion, IDPago FROM box_beni_piza_joaquin_v2.formapago;
         """)
         tipos = []
-        for (desc) in self.__cursor.fetchall():
-            tipos.append(TipoPago(desc[0]))  
+        for (desc, id) in self.__cursor.fetchall():
+            tipos.append(TipoPago(desc, id))  
 
         return tipos
     

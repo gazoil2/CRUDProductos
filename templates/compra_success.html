@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra Exitosa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .mensaje-exito {
+            color: green;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .resumen-pedido {
+            font-size: 1.2rem;
+            margin-top: 30px;
+        }
+        .tabla-resumen {
+            margin-top: 20px;
+        }
+        .id-pedido {
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">¡Gracias por su compra!</h1>
+        <p class="mensaje-exito">Su compra se ha completado exitosamente.</p>
+
+        <div class="resumen-pedido">
+            <h3 class="text-center">Resumen del Pedido</h3>
+            <p class="text-center id-pedido">ID del Pedido: {{ order_id }}</p>
+            <table class="table table-bordered tabla-resumen">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descripción</th>
+                        <th>Precio Unitario</th>
+                        <th>Cantidad</th>
+                        <th>Precio Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                    <tr>
+                        <td>{{ product[0].idProducto }}</td>
+                        <td>{{ product[0].prodDesc }}</td>
+                        <td>${{ product[0].precio }}</td>
+                        <td>{{ product[1] }}</td>
+                        <td>${{ product[1] * product[0].precio }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="gran-total text-center">Total: ${{ precio_total }}</div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="/" class="btn btn-success">Volver a Inicio</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
