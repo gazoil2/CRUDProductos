@@ -31,18 +31,22 @@
             width: 100%; /* Asegura que el select sea de ancho completo */
         }
         .form-select:focus {
-            border-color: #28a745; /* Color de borde al enfocar */
-            box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Sombra al enfocar */
+            border-color: #007bff; /* Color de borde al enfocar */
         }
-        .btn-success {
-            background-color: #28a745; /* Color verde del botón */
+        .btn-custom {
+            background-color: #007bff; /* Color azul del botón */
             border: none; /* Sin borde */
             transition: background-color 0.3s; /* Transición suave del fondo */
             padding: 15px; /* Mayor relleno para hacer el botón más grande */
             width: 100%; /* Asegura que el botón sea de ancho completo */
+            color: white; /* Color del texto */
         }
-        .btn-success:hover {
-            background-color: #218838; /* Verde más oscuro al pasar el ratón */
+        .btn-custom:hover {
+            color: white; /* Color del texto */
+            background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+        }
+        .alert-message {
+            margin-bottom: 20px; /* Espacio debajo del mensaje */
         }
     </style>
 </head>
@@ -52,20 +56,27 @@
             <div class="col-md-6"> <!-- Card takes half the width -->
                 <div class="card p-4">
                     <h1 class="text-center">Selección de Cliente</h1>
-                    <form action="/productos" method='POST' class="form-group">
+                    
+                    {% if message %}
+                        <div class="alert alert-info alert-message" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endif %}
+
+                    <form action="/" method='POST' class="form-group">
                         <div class="mb-4">
                             <label for="cliente" class="form-label">Selecciona un cliente:</label>
                             <select name="cliente" id="cliente" class="form-select">
                                 <option value="" disabled selected>-- Seleccione un cliente --</option> <!-- Opción por defecto -->
                                 {% for cliente in clientes %}
-                                    <option value="{{ cliente.razSoc }}">
-                                        {{ cliente.idCli }} - {{ cliente.razSoc }}
+                                    <option value="{{ cliente.razSoc }}" class="text-center">
+                                         {{ cliente.razSoc }}
                                     </option>
                                 {% endfor %}
                             </select>
                         </div>
 
-                        <button type="submit" class="btn btn-success">Iniciar sesión</button> <!-- Botón de ancho completo -->
+                        <button type="submit" class="btn btn-custom">Iniciar sesión</button> <!-- Botón de ancho completo -->
                     </form>
                 </div>
             </div>
