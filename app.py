@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 db_config = {
     'user': 'root',
-    'password': '',
+    'password': 'i2i0L2aH1',
     'host': 'localhost',  # or the IP address of your database server
     'port': '3306',
     'database': 'box_beni_piza_joaquin_v2',  # the name of your database
@@ -33,6 +33,7 @@ def list_product():
     products = product_manager.list_products()
     if request.method == 'POST':
         client = request.form.get("cliente")
+        product_manager.set_cliente(client)
         products = product_manager.list_products_for_a_client(client)
     return render_template('productos.html', products = products)
 
@@ -63,7 +64,8 @@ def comprar():
             message = f"No hay stock para los productos combinados"
             return render_template('productos.html', products = productos, message = message)
         if not products:
-            productos = product_manager.list_products_for_a_client(cliente)
+            nomCli = product_manager.get_cliente_actual()
+            productos = product_manager.list_products_for_a_client(nomCli)
             message = f"Seleccione algun producto"
             return render_template('productos.html', products = productos, message = message)
         product_manager.set_productos_a_comprar(products)

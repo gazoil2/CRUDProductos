@@ -7,6 +7,7 @@ class ProductManager:
         self.__productsDAO = products_dao
         self.__clientDAO = client_dao
         self.__tipo_pagoDAO = tipo_dao
+        self.__cliente_actual = ""
         self.__products = []
         self.__clientes = []
         self.__tipo_pago = []
@@ -52,3 +53,9 @@ class ProductManager:
         return self.__productos_a_comprar
     def print_a(self,key):
         print(key)
+    
+    def set_cliente(self, nombre_cliente):
+        self.__cliente_actual = nombre_cliente
+    
+    def get_cliente_actual(self):
+        return self.__cliente_actual
