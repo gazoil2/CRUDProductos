@@ -1,10 +1,10 @@
-CREATE DATABASE  IF NOT EXISTS `box_beni_piza_joaquin_v2` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE  IF NOT EXISTS `box_beni_piza_joaquin_v2` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `box_beni_piza_joaquin_v2`;
--- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
 -- Host: localhost    Database: box_beni_piza_joaquin_v2
 -- ------------------------------------------------------
--- Server version	8.0.38
+-- Server version	8.0.28
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -53,43 +53,9 @@ CREATE TABLE `articulo` (
 
 LOCK TABLES `articulo` WRITE;
 /*!40000 ALTER TABLE `articulo` DISABLE KEYS */;
-INSERT INTO `articulo` VALUES ('AGUA','Agua',6,100.00,25,'LTS',1,0.00,0.00,'2007-01-01'),('BC10038-25','Base Cerejeira 100x38x2,5',4,100.00,2,'CU',1,100.00,50.00,'2016-03-10'),('BICAZ1','Birome BIC AZUL GRUESO',5,25.00,5,'CU',1,35.00,5.00,'2007-01-01'),('BICNG1','Birome BIC NEGRO GRUESO',5,25.00,5,'CU',1,21.00,5.00,'2007-01-01'),('BICRO1','Birome BIC ROJO GRUESO',5,25.00,5,'CU',1,18.00,5.00,'2007-01-01'),('BICTGAZUL','Bic trazo grueso Azul',5,15.00,5,'CU',1,8.00,15.00,'2021-10-10'),('BICTGNEGRA','Bic trazo grueso Negra',5,15.00,5,'CU',1,30.00,15.00,'2021-11-10'),('BICTGROJO','Bic trazo grueso Rojo',5,15.00,5,'CU',1,55.00,15.00,'2021-10-10'),('BOGLOGO','Logo Bogner',4,0.00,20,'CU',1,30.00,15.00,'2018-08-02'),('BP10038-25','Base Pino 100x38x2,5',4,250.00,2,'CU',1,15.00,5.00,'2010-08-01'),('BP11038-25','Base Pino 110x38x2,5',4,120.00,2,'CU',1,30.00,5.00,'2010-08-02'),('BP12038-25','Base Pino 120x38x2,5',4,220.00,2,'CU',1,20.00,5.00,'2010-04-20'),('BROCHES10','Broches 10',5,11.00,5,'CU',1,5.00,5.00,'2021-11-10'),('BROCHES15','Broches 15',5,11.80,5,'CU',1,16.00,5.00,'2021-10-20'),('CHAPF-P1000','Chapa Apoyo Sup. Fender P1000',4,380.00,21,'CU',1,40.00,5.00,'2010-04-10'),('CHAPFDER-HR','Chapa Apoyo Sup. Fender HR',4,280.00,21,'CU',1,100.00,20.00,'2019-04-10'),('CHAPMBHN','Chapa Apoyo Sup. MB Head - Negro',4,400.00,21,'CU',1,33.00,5.00,'2010-04-10'),('COLA_MADERA','Cola Madera',4,90.00,3,'CM3',1,16000.00,4000.00,'2013-02-08'),('CUAD-ESPIRAL-CUA-80','CUADERNO Espiralado 80h Cuadriculado',5,80.00,5,'CU',1,10.00,10.00,'2018-08-08'),('CUAD-ESPIRAL-RAY-80','CUADERNO Espiralado 80h Rayado',5,85.00,5,'CU',1,12.00,10.00,'2018-08-08'),('CUEFDER-BK','Cuerina Fender Negro',4,150.00,16,'M2',1,180.00,10.00,'2010-11-03'),('CUEMBC','Cuerina MB Caoba',4,320.00,16,'M2',1,38.50,10.00,'2010-03-08'),('CUEMBCREAM','Cuerina MB Cream',4,350.00,16,'M2',1,45.00,10.00,'2010-10-02'),('CUEMBN','Cuerina MB Negro',4,150.00,16,'M2',1,180.00,10.00,'2010-03-11'),('CUEVIB SLO','Cuerina Vibora Soldano Custom 1',4,600.00,16,'M2',1,80.00,20.00,'2020-01-01'),('ENERGIA','Energía Electrica',6,1200.00,24,'KWH',1,0.00,0.00,'2007-01-01'),('ESQUIFDERA-BK','Esquinas Fender Acetato - Negro',4,60.00,2,'CU',1,100.00,20.00,'2018-08-04'),('ESQUIMBAHN','Esquinas MB Acetato Head - Negro',4,600.00,2,'CU',1,100.00,20.00,'2018-08-04'),('FC9520-25','Fondo Cerejerira 95x20x2,5',4,100.00,2,'CU',1,100.00,50.00,'2016-03-10'),('FDERLOGO1','Logo Fender 1',4,0.00,20,'CU',1,130.00,40.00,'2018-08-02'),('FDERLOGO2','Logo Fender 2',4,0.00,20,'CU',1,50.00,10.00,'2018-08-02'),('FDERLOGO3','Logo Fender 3',4,0.00,20,'CU',1,1000.00,200.00,'2018-08-02'),('FP10535-25','Fondo Pino 105x30x2,5',4,100.00,2,'CU',1,14.00,5.00,'2018-08-04'),('FP11525-25','Fondo Pino 115x25x2,5',4,100.00,2,'CU',1,13.00,5.00,'2018-08-08'),('FP1557225','Frente Pino 1x12 W 155x72x2,5',4,200.00,2,'CU',1,16.00,5.00,'2010-08-08'),('FP9520-25','Fondo Pino 95x20x2,5',4,400.00,2,'CU',1,13.00,5.00,'2012-08-08'),('FREZ1506N','Frezado 1,5x0,6 - Negro',4,0.30,1,'CU',1,98.00,150.00,'2012-08-08'),('FREZ1506P','Frezado 1,5x0,6 - Plata',4,0.40,1,'CU',1,480.00,150.00,'2012-08-08'),('FREZ206P','Frezado 2x0,6 - Plata',4,0.35,1,'CU',1,500.00,100.00,'2012-08-08'),('FTEC9520-25','Frente Cerejerira 95x20x2,5',4,100.00,2,'CU',1,100.00,50.00,'2016-03-10'),('FTEP1210545-25','Frente Pino 1x12 105x45x2,5',4,100.00,1,'CU',1,11.00,5.00,'2012-08-08'),('FTEP1211550-25','Frente Pino 1x12 115x50x2,5',4,220.00,2,'CU',1,12.00,5.00,'2018-06-08'),('FTEP9520-25','Frente Pino 95x20x2,5',4,130.00,2,'CU',1,19.00,5.00,'2010-07-08'),('GAS','Gas',6,900.00,25,'CM3',1,0.00,0.00,'2007-01-01'),('HP12A','TONER 12A HP',5,3000.00,17,'CU',1,5.00,5.00,'2018-08-08'),('HP78A','TONER 78A HP',5,3000.00,17,'CU',1,5.00,1.00,'2021-10-08'),('LACA-MR-BR','Laca Marina Brillante',4,205.00,14,'CM3',1,1920.00,4000.00,'2019-08-05'),('LACA-MR-SM','Laca Marina Semi-Mate',4,134.00,14,'CM3',1,8000.00,4000.00,'2019-03-01'),('LCD3840-25','Lateral Der Cerejeira Forma 38x40x2,5',4,100.00,2,'CU',1,100.00,50.00,'2016-03-10'),('LCI3840-25','Lateral Izq Cerejerira Forma 38x40x2,5',4,100.00,2,'CU',1,100.00,50.00,'2016-03-10'),('LPD3840-25','Lateral Der Pino Forma 38x40x2,5',4,370.00,2,'CU',1,20.00,5.00,'2010-08-08'),('LPD3855-25','Lateral Der Pino Forma 38x55x2,5',4,300.00,2,'CU',1,19.00,5.00,'2010-09-08'),('LPI3840-25','Lateral Izq Pino Forma 38x40x2,5',4,120.00,2,'CU',1,18.00,5.00,'2012-08-08'),('LPI3855-25','Lateral Izq Pino Forma 38x55x2,5',4,140.00,2,'CU',1,22.00,5.00,'2012-08-08'),('MANITFDER-BK','Manija Transp. Fender - Negro',4,140.00,8,'CU',1,60.00,20.00,'2018-08-08'),('MANITMBCN','Manija Transp. Heavy MB - Negro',4,450.00,8,'CU',1,35.00,15.00,'2012-08-08'),('MANITMBN','Manija Transp. MB - Negro',4,340.00,8,'CU',1,30.00,15.00,'2018-08-08'),('MARLOGO','Logo Marshall',4,0.00,20,'CU',1,200.00,50.00,'2017-08-03'),('MBLOGO1','Logo Boogie',4,0.00,20,'CU',1,20.00,20.00,'2018-02-06'),('MBLOGO2','Logo Boogie Cream',4,0.00,20,'CU',1,150.00,30.00,'2013-02-08'),('MECHAMAD10','Mecha madera 10mm',5,45.00,4,'CU',1,3.00,5.00,'2018-01-10'),('MECHAMAD4','Mecha madera 4mm',5,35.00,4,'CU',1,12.00,5.00,'2018-08-03'),('MECHAMAD5','Mecha madera 5mm',5,35.00,4,'CU',1,8.00,5.00,'2018-01-12'),('MECHAMAD6','Mecha madera 6mm',5,35.00,4,'CU',1,14.00,5.00,'2018-08-03'),('PARK205N','Parker 2x0,5 - Negro',4,400.00,1,'CU',1,220.00,100.00,'2013-08-08'),('PARK2505N','Parker 2,5x0,5 - Negro',4,350.00,1,'CU',1,250.00,120.00,'2018-08-06'),('PEGA-CTO','Pegamento de Contacto',4,295.00,3,'CM3',1,12000.00,2000.00,'2020-08-12'),('PEGA-CTO_TR','Pegamento de Contacto Tranparente',4,290.00,3,'CM3',1,20000.00,2000.00,'2020-10-03'),('PLASTICOLA 200GRS','Plasticola 200 gramos blanca',5,145.00,5,'CU',1,12.00,10.00,'2019-08-08'),('REGAFDERSTD-BKN','Regaton Fender STD - Negro',4,22.00,9,'CU',1,180.00,50.00,'2018-08-06'),('REGAMBHN','Regaton MB Head - Negro',4,122.00,9,'CU',1,97.00,50.00,'2018-08-06'),('REGUNV35','Regaton UNIV 35mm- Negro',4,75.00,9,'CU',1,650.00,100.00,'2018-08-06'),('REGUNV40','Regaton UNIV 40mm- Negro',4,80.00,9,'CU',1,450.00,100.00,'2018-08-06'),('RESMA-A4-75GR','Resma A4 500 x 75grs',5,455.00,5,'CU',1,25.00,20.00,'2020-08-08'),('RESMA-CARTA-80GR','Resma CARTA 500 x 80grs',5,498.00,5,'CU',1,15.00,15.00,'2020-08-08'),('RESMAA480G','Resma A4 80grs',5,90.00,5,'CU',1,25.00,15.00,'2021-10-10'),('RESMALT80G','Resma LT 80grs',5,95.00,5,'CU',1,15.00,10.00,'2021-10-10'),('RIVLOGO','Logo Rivera',4,0.00,20,'CU',1,100.00,30.00,'2020-10-03'),('RUED 45-AZUL','Ruedas 45mm diam Azul',4,230.00,18,'CU',1,80.00,20.00,'2017-08-10'),('RUED 60-BK','Ruedas 60mm diam Negra',4,268.00,18,'CU',1,120.00,20.00,'2017-08-10'),('SEGURIDAD','Servicio de Seguridad',6,1050.00,25,'CU',1,0.00,0.00,'2007-01-01'),('SEGUROS','Seguros',6,3000.00,25,'CU',1,0.00,0.00,'2007-01-01'),('SLOLOGO','Logo Soldano',4,0.00,20,'CU',1,78.00,20.00,'2019-03-14'),('TARM1020','Tarugos Mad. 10x20',4,8.00,19,'CU',1,405.00,150.00,'2014-02-05'),('TARM1030','Tarugos Mad. 10x30',4,8.00,19,'CU',1,605.00,150.00,'2014-08-04'),('TC10028-25','Tapa Cerejeira 100x28x2,5',4,100.00,2,'CU',1,100.00,50.00,'2016-03-10'),('TELAFDER-BD','Tela Blues Deville Fender',4,125.80,13,'M2',1,100.00,40.00,'2019-08-02'),('TOPFONC20-25x25','Tope Fondo Cerejerira 20x2,5x2,5',4,100.00,2,'CU',1,100.00,50.00,'2016-03-10'),('TOPFONP20-25x25','Tope Fondo Pino 20x2,5x2,5',4,270.00,2,'CU',1,12.00,10.00,'2014-08-08'),('TOPFONP25-25x25','Tope Fondo Pino 25x2,5x2,5',4,290.00,2,'CU',1,14.00,10.00,'2014-02-08'),('TOPFONP30-25x25','Tope Fondo Pino 30x2,5x2,5',4,400.00,2,'CU',1,16.00,10.00,'2014-08-10'),('TOPFREC20-25x25','Tope Frente Cerejerira 20x2,5x2,5',4,100.00,2,'CU',1,100.00,50.00,'2016-03-10'),('TOPFREP20-25x25','Tope Frente Pino 20x2,5x2,5',4,300.00,2,'CU',1,12.00,10.00,'2014-08-10'),('TOPFREP38-25x25','Tope Frente Pino 38x2,5x2,5',4,210.00,2,'CU',1,14.00,10.00,'2017-08-18'),('TOPFREP50-25x25','Tope Frente Pino 50x2,5x2,5',4,125.00,2,'CU',1,16.00,15.00,'2017-08-10'),('TP10028-25','Tapa Pino 100x28x2,5',4,189.00,2,'CU',1,24.00,15.00,'2017-08-04'),('TP11028-25','Tapa Pino 110x28x2,5',4,167.00,2,'CU',1,23.00,15.00,'2017-08-03'),('TP12038-25','Tapa Pino 120x38x2,5',4,380.00,2,'CU',1,22.00,15.00,'2017-08-03'),('VINIL','Peg. Vinilico Contacto',4,124.00,12,'CM3',1,1350.80,1500.00,'2018-08-02'),('VINIL-ESP','Peg. Vinilico Contacto Especial',4,450.00,12,'CM3',1,2500.30,5000.00,'2019-08-02'),('VINIL-NG','Peg. Vinilico Contacto Negro',4,100.00,12,'CM3',1,4560.00,5000.00,'2019-08-01');
+INSERT INTO `articulo` VALUES ('AGUA','Agua',6,100.00,25,'LTS',1,0.00,0.00,'2007-01-01'),('BC10038-25','Base Cerejeira 100x38x2,5',4,100.00,2,'CU',1,100.00,50.00,'2016-03-10'),('BICAZ1','Birome BIC AZUL GRUESO',5,25.00,5,'CU',1,35.00,5.00,'2007-01-01'),('BICNG1','Birome BIC NEGRO GRUESO',5,25.00,5,'CU',1,21.00,5.00,'2007-01-01'),('BICRO1','Birome BIC ROJO GRUESO',5,25.00,5,'CU',1,18.00,5.00,'2007-01-01'),('BICTGAZUL','Bic trazo grueso Azul',5,15.00,5,'CU',1,8.00,15.00,'2021-10-10'),('BICTGNEGRA','Bic trazo grueso Negra',5,15.00,5,'CU',1,30.00,15.00,'2021-11-10'),('BICTGROJO','Bic trazo grueso Rojo',5,15.00,5,'CU',1,55.00,15.00,'2021-10-10'),('BOGLOGO','Logo Bogner',4,0.00,20,'CU',1,30.00,15.00,'2018-08-02'),('BP10038-25','Base Pino 100x38x2,5',4,250.00,2,'CU',1,15.00,5.00,'2010-08-01'),('BP11038-25','Base Pino 110x38x2,5',4,120.00,2,'CU',1,30.00,5.00,'2010-08-02'),('BP12038-25','Base Pino 120x38x2,5',4,220.00,2,'CU',1,20.00,5.00,'2010-04-20'),('BROCHES10','Broches 10',5,11.00,5,'CU',1,5.00,5.00,'2021-11-10'),('BROCHES15','Broches 15',5,11.80,5,'CU',1,16.00,5.00,'2021-10-20'),('CHAPF-P1000','Chapa Apoyo Sup. Fender P1000',4,380.00,21,'CU',1,40.00,5.00,'2010-04-10'),('CHAPFDER-HR','Chapa Apoyo Sup. Fender HR',4,280.00,21,'CU',1,100.00,20.00,'2019-04-10'),('CHAPMBHN','Chapa Apoyo Sup. MB Head - Negro',4,400.00,21,'CU',1,33.00,5.00,'2010-04-10'),('COLA_MADERA','Cola Madera',4,90.00,3,'CM3',1,16000.00,4000.00,'2013-02-08'),('CUAD-ESPIRAL-CUA-80','CUADERNO Espiralado 80h Cuadriculado',5,80.00,5,'CU',1,10.00,10.00,'2018-08-08'),('CUAD-ESPIRAL-RAY-80','CUADERNO Espiralado 80h Rayado',5,85.00,5,'CU',1,12.00,10.00,'2018-08-08'),('CUEFDER-BK','Cuerina Fender Negro',4,150.00,16,'M2',1,180.00,10.00,'2010-11-03'),('CUEMBC','Cuerina MB Caoba',4,320.00,16,'M2',1,38.50,10.00,'2010-03-08'),('CUEMBCREAM','Cuerina MB Cream',4,350.00,16,'M2',1,45.00,10.00,'2010-10-02'),('CUEMBN','Cuerina MB Negro',4,150.00,16,'M2',1,180.00,10.00,'2010-03-11'),('CUEVIB SLO','Cuerina Vibora Soldano Custom 1',4,600.00,16,'M2',1,80.00,20.00,'2020-01-01'),('ENERGIA','Energía Electrica',6,1200.00,24,'KWH',1,0.00,0.00,'2007-01-01'),('ESQUIFDERA-BK','Esquinas Fender Acetato - Negro',4,60.00,2,'CU',1,100.00,20.00,'2018-08-04'),('ESQUIMBAHN','Esquinas MB Acetato Head - Negro',4,600.00,2,'CU',1,100.00,20.00,'2018-08-04'),('FC9520-25','Fondo Cerejerira 95x20x2,5',4,100.00,2,'CU',1,100.00,50.00,'2016-03-10'),('FDERLOGO1','Logo Fender 1',4,0.00,20,'CU',1,130.00,40.00,'2018-08-02'),('FDERLOGO2','Logo Fender 2',4,0.00,20,'CU',1,50.00,10.00,'2018-08-02'),('FDERLOGO3','Logo Fender 3',4,0.00,20,'CU',1,1000.00,200.00,'2018-08-02'),('FP10535-25','Fondo Pino 105x30x2,5',4,100.00,2,'CU',1,14.00,5.00,'2018-08-04'),('FP11525-25','Fondo Pino 115x25x2,5',4,100.00,2,'CU',1,13.00,5.00,'2018-08-08'),('FP1557225','Frente Pino 1x12 W 155x72x2,5',4,200.00,2,'CU',1,16.00,5.00,'2010-08-08'),('FP9520-25','Fondo Pino 95x20x2,5',4,400.00,2,'CU',1,13.00,5.00,'2012-08-08'),('FREZ1506N','Frezado 1,5x0,6 - Negro',4,0.30,1,'CU',1,98.00,150.00,'2012-08-08'),('FREZ1506P','Frezado 1,5x0,6 - Plata',4,0.40,1,'CU',1,480.00,150.00,'2012-08-08'),('FREZ206P','Frezado 2x0,6 - Plata',4,0.35,1,'CU',1,500.00,100.00,'2012-08-08'),('FTEC9520-25','Frente Cerejerira 95x20x2,5',4,100.00,2,'CU',1,100.00,50.00,'2016-03-10'),('FTEP1210545-25','Frente Pino 1x12 105x45x2,5',4,100.00,1,'CU',1,11.00,5.00,'2012-08-08'),('FTEP1211550-25','Frente Pino 1x12 115x50x2,5',4,220.00,2,'CU',1,12.00,5.00,'2018-06-08'),('FTEP9520-25','Frente Pino 95x20x2,5',4,130.00,2,'CU',1,19.00,5.00,'2010-07-08'),('GAS','Gas',6,900.00,25,'CM3',1,0.00,0.00,'2007-01-01'),('HP12A','TONER 12A HP',5,3000.00,17,'CU',1,5.00,5.00,'2018-08-08'),('HP78A','TONER 78A HP',5,3000.00,17,'CU',1,5.00,1.00,'2021-10-08'),('LACA-MR-BR','Laca Marina Brillante',4,205.00,14,'CM3',1,1920.00,4000.00,'2019-08-05'),('LACA-MR-SM','Laca Marina Semi-Mate',4,134.00,14,'CM3',1,8000.00,4000.00,'2019-03-01'),('LCD3840-25','Lateral Der Cerejeira Forma 38x40x2,5',4,100.00,2,'CU',1,100.00,50.00,'2016-03-10'),('LCI3840-25','Lateral Izq Cerejerira Forma 38x40x2,5',4,100.00,2,'CU',1,100.00,50.00,'2016-03-10'),('LPD3840-25','Lateral Der Pino Forma 38x40x2,5',4,370.00,2,'CU',1,20.00,5.00,'2010-08-08'),('LPD3855-25','Lateral Der Pino Forma 38x55x2,5',4,300.00,2,'CU',1,19.00,5.00,'2010-09-08'),('LPI3840-25','Lateral Izq Pino Forma 38x40x2,5',4,120.00,2,'CU',1,18.00,5.00,'2012-08-08'),('LPI3855-25','Lateral Izq Pino Forma 38x55x2,5',4,140.00,2,'CU',1,22.00,5.00,'2012-08-08'),('MANITFDER-BK','Manija Transp. Fender - Negro',4,140.00,8,'CU',1,60.00,20.00,'2018-08-08'),('MANITMBCN','Manija Transp. Heavy MB - Negro',4,450.00,8,'CU',1,35.00,15.00,'2012-08-08'),('MANITMBN','Manija Transp. MB - Negro',4,340.00,8,'CU',1,30.00,15.00,'2018-08-08'),('MARLOGO','Logo Marshall',4,0.00,20,'CU',1,200.00,50.00,'2017-08-03'),('MBLOGO1','Logo Boogie',4,0.00,20,'CU',1,20.00,20.00,'2018-02-06'),('MBLOGO2','Logo Boogie Cream',4,0.00,20,'CU',1,150.00,30.00,'2013-02-08'),('MECHAMAD10','Mecha madera 10mm',5,45.00,4,'CU',1,3.00,5.00,'2018-01-10'),('MECHAMAD4','Mecha madera 4mm',5,35.00,4,'CU',1,12.00,5.00,'2018-08-03'),('MECHAMAD5','Mecha madera 5mm',5,35.00,4,'CU',1,8.00,5.00,'2018-01-12'),('MECHAMAD6','Mecha madera 6mm',5,35.00,4,'CU',1,14.00,5.00,'2018-08-03'),('PARK205N','Parker 2x0,5 - Negro',4,400.00,1,'CU',1,220.00,100.00,'2013-08-08'),('PARK2505N','Parker 2,5x0,5 - Negro',4,350.00,1,'CU',1,250.00,120.00,'2018-08-06'),('PEGA-CTO','Pegamento de Contacto',4,295.00,3,'CM3',1,12000.00,2000.00,'2020-08-12'),('PEGA-CTO_TR','Pegamento de Contacto Tranparente',4,290.00,3,'CM3',1,20000.00,2000.00,'2020-10-03'),('PLASTICOLA 200GRS','Plasticola 200 gramos blanca',5,145.00,5,'CU',1,12.00,10.00,'2019-08-08'),('REGAFDERSTD-BKN','Regaton Fender STD - Negro',4,22.00,9,'CU',1,180.00,50.00,'2018-08-06'),('REGAMBHN','Regaton MB Head - Negro',4,122.00,9,'CU',1,97.00,50.00,'2018-08-06'),('REGUNV35','Regaton UNIV 35mm- Negro',4,75.00,9,'CU',1,650.00,100.00,'2018-08-06'),('REGUNV40','Regaton UNIV 40mm- Negro',4,80.00,9,'CU',1,450.00,100.00,'2018-08-06'),('RESMA-A4-75GR','Resma A4 500 x 75grs',5,455.00,5,'CU',1,25.00,20.00,'2020-08-08'),('RESMA-CARTA-80GR','Resma CARTA 500 x 80grs',5,498.00,5,'CU',1,15.00,15.00,'2020-08-08'),('RESMAA480G','Resma A4 80grs',5,90.00,5,'CU',1,25.00,15.00,'2021-10-10'),('RESMALT80G','Resma LT 80grs',5,95.00,5,'CU',1,15.00,10.00,'2021-10-10'),('RIVLOGO','Logo Rivera',4,0.00,20,'CU',1,100.00,30.00,'2020-10-03'),('RUED 45-AZUL','Ruedas 45mm diam Azul',4,230.00,18,'CU',1,80.00,20.00,'2017-08-10'),('RUED 60-BK','Ruedas 60mm diam Negra',4,268.00,18,'CU',1,120.00,20.00,'2017-08-10'),('SEGURIDAD','Servicio de Seguridad',6,1050.00,25,'CU',1,0.00,0.00,'2007-01-01'),('SEGUROS','Seguros',6,3000.00,25,'CU',1,0.00,0.00,'2007-01-01'),('SLOLOGO','Logo Soldano',4,0.00,20,'CU',1,78.00,20.00,'2019-03-14'),('TARM1020','Tarugos Mad. 10x20',4,8.00,19,'CU',1,405.00,150.00,'2014-02-05'),('TARM1030','Tarugos Mad. 10x30',4,8.00,19,'CU',1,605.00,150.00,'2014-08-04'),('TC10028-25','Tapa Cerejeira 100x28x2,5',4,100.00,2,'CU',1,100.00,50.00,'2016-03-10'),('TELAFDER-BD','Tela Blues Deville Fender',4,125.80,13,'M2',1,100.00,40.00,'2019-08-02'),('TOPFONC20-25x25','Tope Fondo Cerejerira 20x2,5x2,5',4,100.00,2,'CU',1,100.00,50.00,'2016-03-10'),('TOPFONP20-25x25','Tope Fondo Pino 20x2,5x2,5',4,270.00,2,'CU',1,12.00,10.00,'2014-08-08'),('TOPFONP25-25x25','Tope Fondo Pino 25x2,5x2,5',4,290.00,2,'CU',1,14.00,10.00,'2014-02-08'),('TOPFONP30-25x25','Tope Fondo Pino 30x2,5x2,5',4,400.00,2,'CU',1,16.00,10.00,'2014-08-10'),('TOPFREC20-25x25','Tope Frente Cerejerira 20x2,5x2,5',4,100.00,2,'CU',1,100.00,50.00,'2016-03-10'),('TOPFREP20-25x25','Tope Frente Pino 20x2,5x2,5',4,300.00,2,'CU',1,12.00,10.00,'2014-08-10'),('TOPFREP38-25x25','Tope Frente Pino 38x2,5x2,5',4,210.00,2,'CU',1,14.00,10.00,'2017-08-18'),('TOPFREP50-25x25','Tope Frente Pino 50x2,5x2,5',4,125.00,2,'CU',1,16.00,15.00,'2017-08-10'),('TP10028-25','Tapa Pino 100x28x2,5',4,189.00,2,'CU',1,24.00,15.00,'2017-08-04'),('TP11028-25','Tapa Pino 110x28x2,5',4,167.00,2,'CU',1,23.00,15.00,'2017-08-03'),('TP12038-25','Tapa Pino 120x38x2,5',4,380.00,2,'CU',1,22.00,15.00,'2017-08-03'),('VINIL','Peg. Vinilico Contacto',4,124.00,12,'CM3',1,20000.00,1500.00,'2018-08-02'),('VINIL-ESP','Peg. Vinilico Contacto Especial',4,450.00,12,'CM3',1,2500.30,5000.00,'2019-08-02'),('VINIL-NG','Peg. Vinilico Contacto Negro',4,100.00,12,'CM3',1,4560.00,5000.00,'2019-08-01');
 /*!40000 ALTER TABLE `articulo` ENABLE KEYS */;
 UNLOCK TABLES;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `articulo_BEFORE_INSERT` BEFORE INSERT ON `articulo` FOR EACH ROW BEGIN
-	call InsertarRegistro(1,  "Creacion articulo "+idArticulo, "Articulo", 1);
-END */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `articulo_BEFORE_UPDATE` BEFORE UPDATE ON `articulo` FOR EACH ROW BEGIN
-	call InsertarRegistro(3, "Modificacion de stock: (de " + old.stock + " a " + new.stock + ") del Articulo "+ new.idArticulo,"Articulo",1);
-END */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `articulo/proveedor`
@@ -539,7 +505,7 @@ CREATE TABLE `formapago` (
   `TipoPago` varchar(5) NOT NULL,
   `Descripcion` varchar(32) NOT NULL,
   PRIMARY KEY (`IDPago`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -548,7 +514,7 @@ CREATE TABLE `formapago` (
 
 LOCK TABLES `formapago` WRITE;
 /*!40000 ALTER TABLE `formapago` DISABLE KEYS */;
-INSERT INTO `formapago` VALUES (1,'E','Me pago en efectibo');
+INSERT INTO `formapago` VALUES (1,'E','Efectivo'),(2,'D','Debito'),(3,'C','Credito');
 /*!40000 ALTER TABLE `formapago` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -880,7 +846,7 @@ CREATE TABLE `ordenventacab` (
 
 LOCK TABLES `ordenventacab` WRITE;
 /*!40000 ALTER TABLE `ordenventacab` DISABLE KEYS */;
-INSERT INTO `ordenventacab` VALUES (1,1,2,'2007-05-15',1,'Parcial','2036-10-17',23112.12),(2,2,2,'2007-06-07',1,'Parcial','2010-10-08',123123.12),(3,1,1,NULL,1,'Parcial','2024-10-19',139228.89),(4,1,1,NULL,1,'parcial','2024-10-19',1.00),(5,1,1,NULL,1,'Retira cliente','2024-10-19',137283.18),(6,1,1,NULL,1,'Retira cliente','2024-10-19',139228.89),(7,1,1,NULL,1,'Envio','2024-10-19',139228.89),(8,1,1,NULL,1,'Envio','2024-10-19',139228.89),(9,1,1,NULL,1,'Envio','2024-10-19',139228.89),(10,1,1,NULL,1,'Envio','2024-10-19',137283.18),(11,1,1,NULL,1,'Envio','2024-10-19',139228.89),(12,1,1,NULL,1,'Retira cliente','2024-10-19',151655.98);
+INSERT INTO `ordenventacab` VALUES (1,1,2,'2007-05-15',1,'Parcial','2036-10-17',23112.12),(2,2,2,'2007-06-07',1,'Parcial','2010-10-08',123123.12),(3,1,1,NULL,1,'Parcial','2024-10-19',139228.89),(4,1,1,NULL,1,'parcial','2024-10-19',1.00),(5,1,1,NULL,1,'Retira cliente','2024-10-19',137283.18),(6,1,1,NULL,1,'Retira cliente','2024-10-19',139228.89),(7,1,1,NULL,1,'Envio','2024-10-19',139228.89),(8,1,1,NULL,1,'Envio','2024-10-19',139228.89),(9,1,1,NULL,1,'Envio','2024-10-19',139228.89),(10,1,1,NULL,1,'Envio','2024-10-19',137283.18),(11,1,1,NULL,1,'Envio','2024-10-19',139228.89),(12,1,1,NULL,1,'Retira cliente','2024-10-19',151655.98),(13,1,1,NULL,2,'Retira cliente','2024-10-25',139228.89),(14,1,1,NULL,3,'Retira cliente','2024-10-25',428168.05),(15,1,1,NULL,1,'Envio','2024-10-25',428168.05);
 /*!40000 ALTER TABLE `ordenventacab` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -903,7 +869,7 @@ CREATE TABLE `ordenventadet` (
   KEY `FKID_Producto` (`IDProducto`),
   CONSTRAINT `FKID_OrdenVentaCAB` FOREIGN KEY (`IDOrdenVentaCAB`) REFERENCES `ordenventacab` (`IDOrdenVentaCAB`),
   CONSTRAINT `FKID_Producto` FOREIGN KEY (`IDProducto`) REFERENCES `producto` (`IDProducto`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -912,7 +878,7 @@ CREATE TABLE `ordenventadet` (
 
 LOCK TABLES `ordenventadet` WRITE;
 /*!40000 ALTER TABLE `ordenventadet` DISABLE KEYS */;
-INSERT INTO `ordenventadet` VALUES (1,1,'BLUED4X10',15,139228.89,208843335.00),(2,1,'MVCBO1',4,155627.81,62251124.00),(3,2,'BLUED4X10',10,139228.89,139228890.00),(4,6,'BLUED4X10',1,139228.89,139228.89),(5,7,'BLUED4X10',1,139228.89,139228.89),(6,8,'BLUED4X10',1,139228.89,139228.89),(7,9,'BLUED4X10',1,139228.89,139228.89),(8,10,'FHOTRODDX3',1,137283.18,137283.18),(9,11,'BLUED4X10',1,139228.89,139228.89),(10,12,'PERF1000',1,151655.98,151655.98);
+INSERT INTO `ordenventadet` VALUES (1,1,'BLUED4X10',15,139228.89,208843335.00),(2,1,'MVCBO1',4,155627.81,62251124.00),(3,2,'BLUED4X10',10,139228.89,139228890.00),(4,6,'BLUED4X10',1,139228.89,139228.89),(5,7,'BLUED4X10',1,139228.89,139228.89),(6,8,'BLUED4X10',1,139228.89,139228.89),(7,9,'BLUED4X10',1,139228.89,139228.89),(8,10,'FHOTRODDX3',1,137283.18,137283.18),(9,11,'BLUED4X10',1,139228.89,139228.89),(10,12,'PERF1000',1,151655.98,151655.98),(11,13,'BLUED4X10',1,139228.89,139228.89),(12,14,'BLUED4X10',1,139228.89,139228.89),(13,14,'FHOTRODDX3',1,137283.18,137283.18),(14,14,'PERF1000',1,151655.98,151655.98),(15,15,'BLUED4X10',1,139228.89,139228.89),(16,15,'FHOTRODDX3',1,137283.18,137283.18),(17,15,'PERF1000',1,151655.98,151655.98);
 /*!40000 ALTER TABLE `ordenventadet` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1274,7 +1240,7 @@ CREATE TABLE `reserva_materiales` (
   PRIMARY KEY (`idreserva_materiales`),
   KEY `fk_reserva_articulo_idx` (`IDArticulo`),
   CONSTRAINT `fk_reserva_articulo` FOREIGN KEY (`IDArticulo`) REFERENCES `articulo` (`IDArticulo`)
-) ENGINE=InnoDB AUTO_INCREMENT=219 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=436 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1283,7 +1249,7 @@ CREATE TABLE `reserva_materiales` (
 
 LOCK TABLES `reserva_materiales` WRITE;
 /*!40000 ALTER TABLE `reserva_materiales` DISABLE KEYS */;
-INSERT INTO `reserva_materiales` VALUES (188,'TP10028-25',1,'Venta cab: 12'),(189,'BP10038-25',1,'Venta cab: 12'),(190,'LPD3840-25',1,'Venta cab: 12'),(191,'LPI3840-25',1,'Venta cab: 12'),(192,'FP9520-25',1,'Venta cab: 12'),(193,'FTEP9520-25',1,'Venta cab: 12'),(194,'TOPFREP20-25x25',2,'Venta cab: 12'),(195,'TOPFONP20-25x25',2,'Venta cab: 12'),(196,'REGAFDERSTD-BKN',4,'Venta cab: 12'),(197,'MANITFDER-BK',1,'Venta cab: 12'),(198,'TARM1020',8,'Venta cab: 12'),(199,'PARK205N',4,'Venta cab: 12'),(200,'PARK2505N',4,'Venta cab: 12'),(201,'FREZ206P',2,'Venta cab: 12'),(202,'FREZ1506P',4,'Venta cab: 12'),(203,'CUEFDER-BK',5,'Venta cab: 12'),(204,'VINIL',820,'Venta cab: 12'),(205,'FREZ1506N',8,'Venta cab: 12'),(206,'FDERLOGO3',1,'Venta cab: 12');
+INSERT INTO `reserva_materiales` VALUES (188,'TP10028-25',1,'Venta cab: 12'),(189,'BP10038-25',1,'Venta cab: 12'),(190,'LPD3840-25',1,'Venta cab: 12'),(191,'LPI3840-25',1,'Venta cab: 12'),(192,'FP9520-25',1,'Venta cab: 12'),(193,'FTEP9520-25',1,'Venta cab: 12'),(194,'TOPFREP20-25x25',2,'Venta cab: 12'),(195,'TOPFONP20-25x25',2,'Venta cab: 12'),(196,'REGAFDERSTD-BKN',4,'Venta cab: 12'),(197,'MANITFDER-BK',1,'Venta cab: 12'),(198,'TARM1020',8,'Venta cab: 12'),(199,'PARK205N',4,'Venta cab: 12'),(200,'PARK2505N',4,'Venta cab: 12'),(201,'FREZ206P',2,'Venta cab: 12'),(202,'FREZ1506P',4,'Venta cab: 12'),(203,'CUEFDER-BK',5,'Venta cab: 12'),(204,'VINIL',820,'Venta cab: 12'),(205,'FREZ1506N',8,'Venta cab: 12'),(206,'FDERLOGO3',1,'Venta cab: 12'),(219,'TP10028-25',1,'Venta cab: 13'),(220,'BP10038-25',1,'Venta cab: 13'),(221,'LPD3840-25',1,'Venta cab: 13'),(222,'LPI3840-25',1,'Venta cab: 13'),(223,'FP9520-25',1,'Venta cab: 13'),(224,'FTEP9520-25',1,'Venta cab: 13'),(225,'TOPFREP20-25x25',2,'Venta cab: 13'),(226,'TOPFONP20-25x25',2,'Venta cab: 13'),(227,'REGAFDERSTD-BKN',4,'Venta cab: 13'),(228,'MANITFDER-BK',1,'Venta cab: 13'),(229,'TARM1020',8,'Venta cab: 13'),(230,'PARK205N',4,'Venta cab: 13'),(231,'PARK2505N',4,'Venta cab: 13'),(232,'FREZ206P',2,'Venta cab: 13'),(233,'FREZ1506P',4,'Venta cab: 13'),(234,'TELAFDER-BD',6,'Venta cab: 13'),(235,'VINIL',760,'Venta cab: 13'),(236,'FREZ1506N',8,'Venta cab: 13'),(237,'FDERLOGO1',1,'Venta cab: 13'),(250,'TP10028-25',1,'Venta cab: 14'),(251,'BP10038-25',1,'Venta cab: 14'),(252,'LPD3840-25',1,'Venta cab: 14'),(253,'LPI3840-25',1,'Venta cab: 14'),(254,'FP9520-25',1,'Venta cab: 14'),(255,'FTEP9520-25',1,'Venta cab: 14'),(256,'TOPFREP20-25x25',2,'Venta cab: 14'),(257,'TOPFONP20-25x25',2,'Venta cab: 14'),(258,'REGAFDERSTD-BKN',4,'Venta cab: 14'),(259,'MANITFDER-BK',1,'Venta cab: 14'),(260,'TARM1020',8,'Venta cab: 14'),(261,'PARK205N',4,'Venta cab: 14'),(262,'PARK2505N',4,'Venta cab: 14'),(263,'FREZ206P',2,'Venta cab: 14'),(264,'FREZ1506P',4,'Venta cab: 14'),(265,'TELAFDER-BD',6,'Venta cab: 14'),(266,'VINIL',760,'Venta cab: 14'),(267,'FREZ1506N',8,'Venta cab: 14'),(268,'FDERLOGO1',1,'Venta cab: 14'),(281,'TC10028-25',1,'Venta cab: 14'),(282,'BC10038-25',1,'Venta cab: 14'),(283,'LCD3840-25',1,'Venta cab: 14'),(284,'LCI3840-25',1,'Venta cab: 14'),(285,'FC9520-25',1,'Venta cab: 14'),(286,'FTEC9520-25',1,'Venta cab: 14'),(287,'TOPFREC20-25x25',2,'Venta cab: 14'),(288,'TOPFONC20-25x25',2,'Venta cab: 14'),(289,'REGAFDERSTD-BKN',4,'Venta cab: 14'),(290,'ESQUIFDERA-BK',6,'Venta cab: 14'),(291,'MANITFDER-BK',1,'Venta cab: 14'),(292,'TARM1020',8,'Venta cab: 14'),(293,'PARK205N',4,'Venta cab: 14'),(294,'PARK2505N',4,'Venta cab: 14'),(295,'FREZ206P',2,'Venta cab: 14'),(296,'CHAPFDER-HR',2,'Venta cab: 14'),(297,'FREZ1506P',4,'Venta cab: 14'),(298,'CUEFDER-BK',5,'Venta cab: 14'),(299,'VINIL',760,'Venta cab: 14'),(300,'FREZ1506N',8,'Venta cab: 14'),(301,'FDERLOGO2',1,'Venta cab: 14'),(312,'TP10028-25',1,'Venta cab: 14'),(313,'BP10038-25',1,'Venta cab: 14'),(314,'LPD3840-25',1,'Venta cab: 14'),(315,'LPI3840-25',1,'Venta cab: 14'),(316,'FP9520-25',1,'Venta cab: 14'),(317,'FTEP9520-25',1,'Venta cab: 14'),(318,'TOPFREP20-25x25',2,'Venta cab: 14'),(319,'TOPFONP20-25x25',2,'Venta cab: 14'),(320,'REGAFDERSTD-BKN',4,'Venta cab: 14'),(321,'MANITFDER-BK',1,'Venta cab: 14'),(322,'TARM1020',8,'Venta cab: 14'),(323,'PARK205N',4,'Venta cab: 14'),(324,'PARK2505N',4,'Venta cab: 14'),(325,'FREZ206P',2,'Venta cab: 14'),(326,'FREZ1506P',4,'Venta cab: 14'),(327,'CUEFDER-BK',5,'Venta cab: 14'),(328,'VINIL',820,'Venta cab: 14'),(329,'FREZ1506N',8,'Venta cab: 14'),(330,'FDERLOGO3',1,'Venta cab: 14'),(343,'TP10028-25',1,'Venta cab: 15'),(344,'BP10038-25',1,'Venta cab: 15'),(345,'LPD3840-25',1,'Venta cab: 15'),(346,'LPI3840-25',1,'Venta cab: 15'),(347,'FP9520-25',1,'Venta cab: 15'),(348,'FTEP9520-25',1,'Venta cab: 15'),(349,'TOPFREP20-25x25',2,'Venta cab: 15'),(350,'TOPFONP20-25x25',2,'Venta cab: 15'),(351,'REGAFDERSTD-BKN',4,'Venta cab: 15'),(352,'MANITFDER-BK',1,'Venta cab: 15'),(353,'TARM1020',8,'Venta cab: 15'),(354,'PARK205N',4,'Venta cab: 15'),(355,'PARK2505N',4,'Venta cab: 15'),(356,'FREZ206P',2,'Venta cab: 15'),(357,'FREZ1506P',4,'Venta cab: 15'),(358,'TELAFDER-BD',6,'Venta cab: 15'),(359,'VINIL',760,'Venta cab: 15'),(360,'FREZ1506N',8,'Venta cab: 15'),(361,'FDERLOGO1',1,'Venta cab: 15'),(374,'TC10028-25',1,'Venta cab: 15'),(375,'BC10038-25',1,'Venta cab: 15'),(376,'LCD3840-25',1,'Venta cab: 15'),(377,'LCI3840-25',1,'Venta cab: 15'),(378,'FC9520-25',1,'Venta cab: 15'),(379,'FTEC9520-25',1,'Venta cab: 15'),(380,'TOPFREC20-25x25',2,'Venta cab: 15'),(381,'TOPFONC20-25x25',2,'Venta cab: 15'),(382,'REGAFDERSTD-BKN',4,'Venta cab: 15'),(383,'ESQUIFDERA-BK',6,'Venta cab: 15'),(384,'MANITFDER-BK',1,'Venta cab: 15'),(385,'TARM1020',8,'Venta cab: 15'),(386,'PARK205N',4,'Venta cab: 15'),(387,'PARK2505N',4,'Venta cab: 15'),(388,'FREZ206P',2,'Venta cab: 15'),(389,'CHAPFDER-HR',2,'Venta cab: 15'),(390,'FREZ1506P',4,'Venta cab: 15'),(391,'CUEFDER-BK',5,'Venta cab: 15'),(392,'VINIL',760,'Venta cab: 15'),(393,'FREZ1506N',8,'Venta cab: 15'),(394,'FDERLOGO2',1,'Venta cab: 15'),(405,'TP10028-25',1,'Venta cab: 15'),(406,'BP10038-25',1,'Venta cab: 15'),(407,'LPD3840-25',1,'Venta cab: 15'),(408,'LPI3840-25',1,'Venta cab: 15'),(409,'FP9520-25',1,'Venta cab: 15'),(410,'FTEP9520-25',1,'Venta cab: 15'),(411,'TOPFREP20-25x25',2,'Venta cab: 15'),(412,'TOPFONP20-25x25',2,'Venta cab: 15'),(413,'REGAFDERSTD-BKN',4,'Venta cab: 15'),(414,'MANITFDER-BK',1,'Venta cab: 15'),(415,'TARM1020',8,'Venta cab: 15'),(416,'PARK205N',4,'Venta cab: 15'),(417,'PARK2505N',4,'Venta cab: 15'),(418,'FREZ206P',2,'Venta cab: 15'),(419,'FREZ1506P',4,'Venta cab: 15'),(420,'CUEFDER-BK',5,'Venta cab: 15'),(421,'VINIL',820,'Venta cab: 15'),(422,'FREZ1506N',8,'Venta cab: 15'),(423,'FDERLOGO3',1,'Venta cab: 15');
 /*!40000 ALTER TABLE `reserva_materiales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1565,6 +1531,79 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `Check_All_Products` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Check_All_Products`()
+BEGIN
+    DECLARE done INT DEFAULT FALSE;
+    DECLARE current_id VARCHAR(45);
+    DECLARE product_cursor CURSOR FOR SELECT IDProducto FROM producto;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+    OPEN product_cursor;
+
+    read_loop: LOOP
+        FETCH product_cursor INTO current_id;
+        IF done THEN
+            LEAVE read_loop;
+        END IF;
+
+        -- Call your function or stored procedure here
+        -- Assuming you have a function named `Check_Stock_Producto_2`
+        call box_beni_piza_joaquin_v2.Put_Costo(current_id); -- Replace `some_quantity` as needed
+    END LOOP;
+
+    CLOSE product_cursor;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `Check_Product_Procesable` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Check_Product_Procesable`(IN P_IDProducto varchar(45), IN P_Cantidad INT)
+BEGIN
+    DECLARE product_exists INT;
+
+    -- Check if the product exists and the stock condition is met
+    SELECT COUNT(*)
+    INTO product_exists
+    FROM producto p 
+    JOIN recetaMateriales r ON p.idProducto = r.IdProducto 
+    JOIN articulo a ON r.iDArticulo = a.IDArticulo   
+    WHERE p.idProducto = P_IDProducto 
+      AND a.Stock - r.cantidad * P_Cantidad < 0;
+
+    IF product_exists > 0 THEN
+        -- If the product exists and is not processable
+        SELECT P_IDProducto, 'N' AS Procesable;
+    ELSE
+        -- If the product is processable
+        SELECT P_IDProducto, 'S',product_exists AS Procesable;
+    END IF;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `Check_Stock_Producto` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -1783,16 +1822,18 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8mb4 */ ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertarVentaCAB`(in pid_tipo_pago int, tipo_entrega varchar(45), pimporte decimal(12,2), razon_cli varchar(45))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertarVentaCAB`(in tipo_pago varchar(45), tipo_entrega varchar(45), pimporte decimal(12,2), razon_cli varchar(45))
 BEGIN
 	declare vidcliente int;
     declare vidventacab int;
+    declare vidpago int;
     select idcliente into vidcliente from cliente where razon_cli = razsoc;
+    select idpago into vidpago from formapago where Descripcion = tipo_pago;
     select count(*) + 1 into vidventacab from ordenventacab;
     
-    insert into ordenventacab(idordenventacab, idcliente, idestado, idformapago, fechaalta, importetotal, tipoentrega) values (vidventacab,vidcliente,1,pid_tipo_pago,curdate(),pimporte, tipo_entrega);
+    insert into ordenventacab(idordenventacab, idcliente, idestado, idformapago, fechaalta, importetotal, tipoentrega) values (vidventacab,vidcliente,1,vidpago,curdate(),pimporte, tipo_entrega);
     select vidventacab;
 END ;;
 DELIMITER ;
@@ -1820,6 +1861,25 @@ BEGIN
     WHERE r.IDProducto = pidproducto;
 	insert into ordenventadet(idordenventacab,idproducto ,cantidad ,punitario  ,importe) values 
 							  (pidventacab   ,pidproducto,pcantidad, ppunitario, ppunitario * cantidad);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `insertar_venta_cab` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insertar_venta_cab`()
+BEGIN
+
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -2131,4 +2191,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-19 21:35:14
+-- Dump completed on 2024-10-25 21:03:12
