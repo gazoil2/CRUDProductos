@@ -67,7 +67,7 @@
                         <div class="mb-4">
                             <label for="cliente" class="form-label">Selecciona un cliente:</label>
                             <select name="cliente" id="cliente" class="form-select">
-                                <option value="" disabled selected>-- Seleccione un cliente --</option> <!-- Opción por defecto -->
+                                <option class="text-center" value="" disabled selected>-- Seleccione un cliente --</option> <!-- Opción por defecto -->
                                 {% for cliente in clientes %}
                                     <option value="{{ cliente.razSoc }}" class="text-center">
                                          {{ cliente.razSoc }}

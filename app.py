@@ -29,11 +29,13 @@ def home():
     if request.method == 'POST':
         client = request.form.get("cliente")
         product_manager.set_cliente(client)
+        product_manager.print_a(client)
         if not client:
             message = f"Tienes que seleccionar un cliente"
             return render_template('index.html', clientes=clientes, message=message)
         return redirect("/productos")
-    return render_template('index.html', clientes=clientes)
+    elif request.method == 'GET':
+        return render_template('index.html', clientes=clientes)
 
 @app.route('/productos',methods=['GET','POST'])
 def list_product():
