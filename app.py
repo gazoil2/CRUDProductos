@@ -58,8 +58,9 @@ def list_product():
                         productos = product_manager.list_products_for_a_client(product.nomCli)
                         message = f"No hay stock para {quantity} del producto {product.idProducto}"
                         return render_template('productos.html', products = productos, message = message)
-                    precio_total += float(precio)
+                    precio_total += float(precio) * quantity
                     products.append((product,quantity))
+        precio_total = round(precio_total, 2)
         has_stock_of_all_products = products_dao.has_stock_of_products(products)
         if not has_stock_of_all_products:
             productos = product_manager.list_products_for_a_client(cliente)
@@ -80,7 +81,6 @@ def comprar():
     if request.method == 'GET':
         products = product_manager.get_productos_a_comprar()
         payment_types = product_manager.list_payment_type()
-
         precio_total = product_manager.get_precio_total()
         product_manager.set_productos_a_comprar(products)
         return render_template('confirmar_compra.html', products=products, precio_total = precio_total, payment_types=payment_types)
@@ -89,7 +89,7 @@ def comprar():
         #PRODUCTOS ES UNA TUPLA DE (PRODUCTO , CANTIDAD)
         tipo_pago = request.form.get("paymentType")
         tipo_envio = request.form.get("shippingType")
-        importe_total = sum(producto[0].precio * producto[1] for producto in productos)
+        importe_total = product_manager.get_precio_total()
         ventacab = VentaCAB(tipo_pago,tipo_envio,importe_total,productos[0][0].nomCli)
         idventacab = ventacab_dao.insertar_venta_cab(ventacab)
         product_manager.set_id_venta_cab(idventacab)
