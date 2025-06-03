@@ -1,5 +1,5 @@
 class VentaCAB:
-    def __init__(self,tipo_pago : int,tipo_envio : str,importe_total : float,razSoc_cliente : str) -> None:
+    def __init__(self,tipo_pago : str,tipo_envio : str,importe_total : float,razSoc_cliente : str) -> None:
         self.__tipo_pago = tipo_pago
         self.__tipo_envio = tipo_envio
         self.__importe_total = importe_total

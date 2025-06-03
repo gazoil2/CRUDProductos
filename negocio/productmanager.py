@@ -1,4 +1,5 @@
 from negocio.product import Product
+from negocio.ventacab import VentaCAB
 from persistencia.productdao import ProductDAO
 from persistencia.clientedao import ClienteDao
 from persistencia.tipopagodao import TipoPagoDAO
@@ -7,10 +8,14 @@ class ProductManager:
         self.__productsDAO = products_dao
         self.__clientDAO = client_dao
         self.__tipo_pagoDAO = tipo_dao
+        self.__cliente_actual = ""
         self.__products = []
         self.__clientes = []
         self.__tipo_pago = []
         self.__productos_a_comprar = []
+        self.__precio_total = 0
+        self.__venta_cab = None
+        self.__id_venta_cab = 0
         self.refresh_data()
     
     def refresh_data(self):
@@ -50,5 +55,30 @@ class ProductManager:
 
     def get_productos_a_comprar(self):
         return self.__productos_a_comprar
+
     def print_a(self,key):
         print(key)
+    
+    def set_cliente(self, nombre_cliente):
+        self.__cliente_actual = nombre_cliente
+    
+    def get_cliente_actual(self):
+        return self.__cliente_actual
+    
+    def set_precio_total(self, value):
+        self.__precio_total = value
+    
+    def get_precio_total(self):
+        return self.__precio_total
+    
+    def set_venta_cab(self, ventacab : VentaCAB):
+        self.__venta_cab = ventacab
+    
+    def get_venta_cab(self):
+        return self.__venta_cab
+    
+    def set_id_venta_cab(self, value):
+        self.__id_venta_cab = value
+    
+    def get_id_venta_cab(self):
+        return self.__id_venta_cab
